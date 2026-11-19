@@ -1,0 +1,11 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.sonacorporatesolutions247.juxo",
+    "sha256_cert_fingerprints": [
+      "BA:05:FD:16:1B:67:1F:EA:08:4B:24:A0:08:84:C8:90:26:F9:38:D6:17:A2:E2:CE:96:7C:09:25:7B:16:6E:88",
+      "FC:80:38:F8:EB:60:7E:D1:1C:3C:7E:09:DF:31:60:3B:46:79:FE:C2:0D:45:5F:EB:43:6E:C7:F7:04:86:DF:60"
+    ]
+  }
+}]
