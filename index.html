@@ -4,15 +4,26 @@
   <meta charset="utf-8" />
   <title>Opening Juxo Event...</title>
   <script>
+    var params = new URLSearchParams(window.location.search);
+    var eventCode = params.get("e") || "";
     var ua = navigator.userAgent || navigator.vendor;
-    if (/iPad|iPhone|iPod/.test(ua)) {
-      window.location.replace("https://apple.com");
-    } else {
-      window.location.replace("https://google.com");
+
+    // 1. Try opening the installed Juxo app directly first
+    if (eventCode) {
+      window.location.href = "juxo://event/" + encodeURIComponent(eventCode);
     }
+
+    // 2. Only redirect to Store after 1.5s if the app is not installed
+    setTimeout(function () {
+      if (/iPad|iPhone|iPod/.test(ua)) {
+        window.location.replace("https://apple.com");
+      } else {
+        window.location.replace("https://google.com");
+      }
+    }, 1500);
   </script>
 </head>
 <body>
-  <p>Redirecting to Juxo...</p>
+  <p>Opening Juxo Event...</p>
 </body>
 </html>
